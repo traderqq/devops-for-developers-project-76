@@ -3,7 +3,7 @@
 
 ## devops hexlet project #2 (ansible)
 
-### install
+### prepare workspace
 make install
 
 ### check
@@ -12,4 +12,19 @@ make check
 
 ### setup servers
 make setup
+
+### deploy redmine containers
+make deploy
+
+## What's here
+for this project following have been set up:
+- Yandex Cloud VM x2
+- Yandex Cloud Web Load Balancer with HTPPS support and Lets Enrypt certificate
+- PostgreSQL cluster (2 nodes)
+
+Redmine 6.2 have been rolled on VMs with Ansible, and accessible only with Load Balancer.
+
+Domain birchcapital.space have been registered and assigned to Load Balancer
+
+Please check working RedMine application here: [https://birchcapital.space](https://birchcapital.space/)
 

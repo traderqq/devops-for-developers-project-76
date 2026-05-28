@@ -1,0 +1,15 @@
+---
+pip_install_packages:
+  - name: docker
+
+redmine_port: 3000
+redmine_image: redmine:6.1
+redmine_container_name: redmine
+redmine_env_path: /opt/redmine/.env
+
+redmine_db_host: rc1b-3dsdf318vnjkhodb.mdb.yandexcloud.net
+redmine_db_port: 6432
+redmine_db_database: redmine
+redmine_db_username: redmine
+redmine_db_password: CmoGGXBbHezpn7I2c
+redmine_secret_key_base: 7ed4bb61a08747b4e5eb980b3dc2d1a23c1f9d5f2f2c77758ef4d8f4520193a9ea2444eb18676b97c305bc44fd357fcf1a375ffb802628399d9310553aca99a3
