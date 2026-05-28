@@ -14,7 +14,7 @@
   tasks:
     - name: Create Redmine config directory
       ansible.builtin.file:
-        path: /opt/redmine
+        path: "{{ redmine_root_dir }}"
         state: directory
         owner: root
         group: root
@@ -38,6 +38,7 @@
         image: "{{ redmine_image }}"
         state: started
         restart_policy: always
+        recreate: true
         pull: missing
         env_file: "{{ redmine_env_path }}"
         published_ports:
