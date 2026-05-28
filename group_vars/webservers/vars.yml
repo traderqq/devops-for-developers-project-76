@@ -1,15 +1,35 @@
 ---
 redmine_port: 3000
-redmine_image: redmine:6.1
-redmine_container_name: redmine
+redmine_image: "redmine:6.1"
+redmine_container_name: "redmine"
 
-redmine_root_dir: /opt/redmine
+redmine_root_dir: "/opt/redmine"
 redmine_env_path: "{{ redmine_root_dir }}/.env"
 
 redmine_db_host: "rc1b-3dsdf318vnjkhodb.mdb.yandexcloud.net"
 redmine_db_port: 6432
-redmine_db_database: redmine
-redmine_db_username: redmine
+redmine_db_database: "redmine"
+redmine_db_username: "redmine"
 redmine_db_password: "{{ vault_redmine_db_password }}"
 
 redmine_secret_key_base: "{{ vault_redmine_secret_key_base }}"
+
+datadog_api_key: "{{ vault_datadog_api_key }}"
+datadog_site: "datadoghq.com"
+
+datadog_config:
+  tags:
+    - "app:redmine"
+    - "project:devops-for-developers-project-76"
+
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - name: "Redmine local check"
+        url: "http://localhost:{{ redmine_port }}/"
+        timeout: 5
+        method: "GET"
+        tags:
+          - "app:redmine"
+          - "check:redmine"

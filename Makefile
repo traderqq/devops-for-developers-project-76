@@ -13,6 +13,12 @@ ping:
 check:
 	ansible all -i inventory.ini -a "docker ps" --ask-vault-pass
 
+monitoring:
+	ansible-playbook -i inventory.ini playbook.yml --tags monitoring --ask-vault-pass
+
+datadog-status:
+	ansible webservers -i inventory.ini -b -a "datadog-agent status" --ask-vault-pass
+
 logs:
 	ansible all -i inventory.ini -a "docker logs --tail=50 redmine" --ask-vault-pass
 

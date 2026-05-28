@@ -11,6 +11,12 @@
       tags:
         - setup
 
+    - role: datadog.dd.agent
+      when: "'webservers' in group_names"
+      tags:
+        - monitoring
+        - setup
+
   tasks:
     - name: Create Redmine config directory
       ansible.builtin.file:
