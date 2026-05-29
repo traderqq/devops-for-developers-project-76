@@ -9,6 +9,9 @@ setup:
 deploy:
 	ansible-playbook -i inventory.ini playbook.yml --tags deploy $(VAULT_ARGS)
 
+test:
+	ansible-playbook -i inventory.test.ini playbook.yml --tags setup --check
+
 ping:
 	ansible all -i inventory.ini -m ping $(VAULT_ARGS)
 
