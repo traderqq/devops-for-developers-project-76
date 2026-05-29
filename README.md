@@ -43,3 +43,4 @@ Please check working RedMine application here: [https://birchcapital.space](http
 
 
 
+[![push](https://github.com/traderqq/devops-for-developers-project-76/actions/workflows/push.yml/badge.svg)](https://github.com/traderqq/devops-for-developers-project-76/actions/workflows/push.yml)
